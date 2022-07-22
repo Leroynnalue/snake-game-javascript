@@ -9,7 +9,7 @@
     let MOVE_RIGHT = 0
     let MOVE_DOWN = 0
     let CONSTANT = 5
-    let WIN_POINT = [randomNumber() , randomNumber()]
+    let WIN_POINT = [randomNumber(10,280) , randomNumber(10,280)]
     let SNAKE_WIDTH = 1
     snake.style.width = SNAKE_WIDTH + 'em'
 
@@ -17,6 +17,7 @@
     // EVENT CATCHERS
     directions.forEach(direction => {
         direction.addEventListener('click',direction_handler)
+        direction.addEventListener('mousedown',direction_handler)
     })
 
     document.addEventListener('keydown',(key) => {
@@ -109,7 +110,7 @@
     }
 
     function win() {
-        WIN_POINT = [randomNumber() , randomNumber()]
+        WIN_POINT = [randomNumber(10,280) , randomNumber(10,280)]
         SNAKE_WIDTH += 0.5
         snake.style.width = SNAKE_WIDTH + 'em'
     }
