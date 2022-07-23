@@ -12,7 +12,8 @@
     let WIN_POINT = [randomNumber(10,280) , randomNumber(10,280)]
     let SNAKE_WIDTH = 1
     snake.style.width = SNAKE_WIDTH + 'em'
-
+    let SCORE_OUTPUT = document.querySelector('[score-output]')
+    let SCORE = 0
 
     // EVENT CATCHERS
     directions.forEach(direction => {
@@ -59,7 +60,6 @@
 
     function move_right() {
         snake.style.transform = `rotate(0deg)`
-        board.style.backgroundColor = 'var(--darkest)'
         MOVE_RIGHT+=CONSTANT
         snake.style.marginLeft = MOVE_RIGHT+'px'
         if(MOVE_RIGHT >= 300){
@@ -111,6 +111,8 @@
 
     function win() {
         WIN_POINT = [randomNumber(10,280) , randomNumber(10,280)]
-        SNAKE_WIDTH += 0.5
+        SNAKE_WIDTH += 0.001
         snake.style.width = SNAKE_WIDTH + 'em'
+        SCORE += 3
+        SCORE_OUTPUT.textContent = SCORE
     }

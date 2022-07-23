@@ -28,7 +28,7 @@ body{
 	width:90%;
     height:300px;
 	margin: 0 auto;
-    background-color:var(--dark);
+    background-color:var(--darkest);
     border:10px solid #FFF;
     border-style:ridge;
     position: relative;
@@ -78,4 +78,28 @@ body{
 
 .controls button:last-child{
     grid-column:span 20;
+}
+
+.score{
+    position: absolute;
+    top:2rem;
+    left:calc(100% - 10rem);
+    color:var(--darkest);
+    font-size:clamp(1.2rem,2vmin,3rem);
+    padding:.5rem 1.2rem;
+    border-radius:2.5em;
+    background-color:var(--light);
+}
+
+.creator{
+    position:absolute;
+    top:calc(100% - 4rem);
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:var(--grey);
+}
+
+.creator a{
+    text-decoration:none;
+    color:var(--dark);
 }
